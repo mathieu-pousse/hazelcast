@@ -22,7 +22,7 @@
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
 
-    <xs:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool.xsd"/>
+    <xs:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.2.xsd"/>
     <xs:element name="config">
         <xs:complexType>
             <xs:complexContent>
@@ -1196,6 +1196,11 @@
                         <xs:documentation>
                             <![CDATA[The name of the HazelcastInstance that this bean depends on.]]>
                         </xs:documentation>
+                        <xs:appinfo>
+                            <tool:annotation kind="ref">
+                                <tool:expected-type type="com.hazelcast.core.HazelcastInstance"/>
+                            </tool:annotation>
+                        </xs:appinfo>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="name" type="xs:string" use="required">
